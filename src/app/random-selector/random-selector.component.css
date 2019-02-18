@@ -9,7 +9,7 @@ inputs-moz-placeholder {
 #wrapper {
   background-color: white;
   padding: 20px;
-  margin-top: 180px;
+  margin-top: 15vh;
   border: 3px solid black;
 }
 
@@ -37,7 +37,7 @@ inputs-moz-placeholder {
   border-radius: 58px;
   font-family: Arial, serif;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 1vw;
   padding: 10px 20px 10px 20px;
   border: solid #1f628d 2px;
   text-decoration: none;
@@ -51,6 +51,7 @@ inputs-moz-placeholder {
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+  cursor: pointer;
 }
 
 #options {
@@ -64,9 +65,15 @@ inputs-moz-placeholder {
   align-items: center;
 }
 
+.input-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .inputs {
-  width: 180px;
-  padding: 15px 25px;
+  width: 70%;
+  padding: 1vh 1vw;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -89,6 +96,13 @@ inputs-moz-placeholder {
   outline: 0;
 }
 
+@media screen and (max-width: 800px) {
+
+  #options {
+    width: 40vw;
+  }
+}
+
 .inputs:hover {
   background: #DFE9EC;
   color: #414848;
@@ -103,8 +117,23 @@ inputs-moz-placeholder {
   cursor: pointer;
 }
 
+.wordwrap {
+  white-space: pre-wrap;      /* CSS3 */
+  white-space: -moz-pre-wrap; /* Firefox */
+  white-space: -pre-wrap;     /* Opera <7 */
+  white-space: -o-pre-wrap;   /* Opera 7 */
+  word-wrap: break-word;      /* IE */
+}
+
 .selection-option {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
+.selection-option {
+  word-wrap: break-word;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }

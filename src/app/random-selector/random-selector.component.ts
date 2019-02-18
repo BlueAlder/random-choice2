@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RandomSelectorComponent implements OnInit {
   choices: string[] = [];
-  newChoice: string;
+  newChoice = '';
   result = '';
   date = Date.now();
 
@@ -29,6 +29,10 @@ export class RandomSelectorComponent implements OnInit {
   }
 
   selectChoice() {
+    if (this.choices.length <=  1 ) {
+      this.result = 'Put at least 2 options in ;)';
+      return;
+    }
     this.result = this.choices[Math.floor(Math.random() * this.choices.length)];
   }
 }
