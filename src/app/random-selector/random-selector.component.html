@@ -1,0 +1,20 @@
+<div id="wrapper">
+  <h1>Got something you can't make a decision on?</h1>
+
+  <div id="options" >
+    <form class="add-option" (ngSubmit)="addNewChoice()">
+      <label>New Option: <input [(ngModel)]="newChoice" name="newchoice" type="text" class="inputs"/></label>  <i (click)="addNewChoice()" class="fas fa-plus close-button"></i>
+    </form>                                                                                                    
+    <div class="selection-option" *ngFor="let option of choices; index as index">
+      <h2>{{index +1 + "."}} {{option}}</h2> <i (click)="deleteChoice(index)" class="fas fa-times close-button"></i>
+    </div>
+  </div>
+
+  <div class="result">
+    <button (click)="selectChoice()" class="button" type = "button">Select My Choice</button>
+    <p id = "result">You should: {{result}}</p>
+  </div>
+
+  <p class="copyright" > Sam Calamos {{date | date: 'yyyy'}} &copy; </p>
+
+</div>
